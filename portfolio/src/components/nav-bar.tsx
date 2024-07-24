@@ -3,15 +3,19 @@ import { useEffect, useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import Image from 'react-bootstrap/Image';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 import logo from '../assets/logo.png'
 import github from '../assets/github.svg'
 import linkedin from '../assets/linkedin.svg'
 import instagram from '../assets/instagram.svg'
-import { Image } from 'react-bootstrap';
+import { useTranslation } from 'react-i18next';
 
 function NavBar() {
   const [activeLink, setActiveLink] = useState('home')
   const [scrolled, setScrolled] = useState(false)
+
+  const { t, i18n } = useTranslation();
 
   useEffect(() =>{
     const onScroll = () => {
@@ -31,6 +35,10 @@ function NavBar() {
     setActiveLink(selectedLink)
   }
 
+  const switchLanguage = (language: string) => {
+    i18n.changeLanguage(language)
+  }
+
   return (
     <Navbar expand="lg" className={scrolled ? "scrolled bg-body-tertiary" : "bg-body-tertiary"}>
       <Container>
@@ -40,9 +48,21 @@ function NavBar() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="m-auto">
-            <Nav.Link href="#home" className={activeLink === 'home' ? 'active' : ''} onClick={() => onUpdateLink('home')}>Home</Nav.Link>
-            <Nav.Link href="#skills" className={activeLink === 'skills' ? 'active' : ''} onClick={() => onUpdateLink('skills')}>Skills</Nav.Link>
-            <Nav.Link href="#projects" className={activeLink === 'projects' ? 'active' : ''} onClick={() => onUpdateLink('projects')}>Projects</Nav.Link>
+            <Nav.Link href="#home" className={activeLink === 'home' ? 'active' : ''} onClick={() => onUpdateLink('home')}>{t('home')}</Nav.Link>
+            <Nav.Link href="#skills" className={activeLink === 'skills' ? 'active' : ''} onClick={() => onUpdateLink('skills')}>{t('skills')}</Nav.Link>
+            <Nav.Link href="#projects" className={activeLink === 'projects' ? 'active' : ''} onClick={() => onUpdateLink('projects')}>{t('project')}</Nav.Link>
+            <NavDropdown title={i18n.language} id="basic-nav-dropdown">
+              { i18n.language !== 'en' &&
+                <NavDropdown.Item onClick={() => switchLanguage('en')}>
+                    en
+                </NavDropdown.Item>
+              }
+              { i18n.language !== 'fr' &&
+                <NavDropdown.Item onClick={() => switchLanguage('fr')}>
+                    fr
+                </NavDropdown.Item>
+              }
+            </NavDropdown>
           </Nav>
           <span className='navbar-text'>
             <div className='social-icon'>

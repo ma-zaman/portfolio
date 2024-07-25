@@ -5,10 +5,10 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Image from 'react-bootstrap/Image';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import logo from '../assets/logo.png'
-import github from '../assets/github.svg'
-import linkedin from '../assets/linkedin.svg'
-import instagram from '../assets/instagram.svg'
+import logo from '@icons/logo.png'
+import github from '@icons/github.png'
+import linkedin from '@icons/linkedin.png'
+import instagram from '@icons/instagram.png'
 import { useTranslation } from 'react-i18next';
 
 function NavBar() {
@@ -66,9 +66,9 @@ function NavBar() {
           </Nav>
           <span className='navbar-text'>
             <div className='social-icon'>
-              <a href="#"><Image src={github} alt="" width={'25px'}/></a>
-              <a href="#"><Image src={instagram} alt="" width={'30px'}/></a>
-              <a href="#"><Image src={linkedin} alt="" width={'28px'}/></a>
+              <a href="https://github.com/ma-zaman" target='_blank' className='px-1'><Image src={github} alt="" width={'33px'}/></a>
+              <a href="#" className='px-1'><Image src={instagram} alt="" width={'30px'}/></a>
+              <a href="#" className='px-1'><Image src={linkedin} alt="" width={'30px'}/></a>
             </div>
           </span>
         </Navbar.Collapse>

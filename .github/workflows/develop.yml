@@ -1,7 +1,10 @@
-name: 🚀 Deploy to FTP dev
+name: 🚀 Deploy to FTP
 
 on:
   push:
+    branches:
+      - develop
+  pull_request:
     branches:
       - develop
 
@@ -18,13 +21,17 @@ jobs:
         with:
           node-version: '16'
 
+      - name: 📥 Install pnpm
+        run: npm install -g pnpm
+
       - name: 📦 Install dependencies
-        run: npm install
+        run: pnpm install
 
       - name: 🛠️ Build the project
-        run: npm build
+        run: pnpm build
 
       - name: 📤 Upload to FTP
+        if: github.event_name == 'push' && github.ref == 'refs/heads/develop'
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
           server: ${{ secrets.FTP_SERVER }}

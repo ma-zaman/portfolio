@@ -5,10 +5,10 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Image from 'react-bootstrap/Image';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import logo from '@icons/logo.png'
-import github from '@icons/github.png'
-import linkedin from '@icons/linkedin.png'
-import instagram from '@icons/instagram.png'
+import logo_dark from '@icons/logo_dark.png'
+import github from '@icons/github_dark.png'
+import linkedin from '@icons/linkedin_dark.png'
+import instagram from '@icons/instagram_dark.png'
 import { useTranslation } from 'react-i18next';
 
 function NavBar() {
@@ -40,17 +40,18 @@ function NavBar() {
   }
 
   return (
-    <Navbar expand="lg" className={scrolled ? "scrolled bg-body-tertiary" : "bg-body-tertiary"}>
+    <Navbar expand="lg" className={scrolled ? "scrolled " : ""} 
+    data-bs-theme="dark">
       <Container>
         <Navbar.Brand href="#home">
-          <Image src={logo} roundedCircle  alt='Logo' width={'100px'}/>
+          <Image src={logo_dark} roundedCircle  alt='Logo' width={'100px'}/>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="m-auto">
-            <Nav.Link href="#home" className={activeLink === 'home' ? 'active' : ''} onClick={() => onUpdateLink('home')}>{t('home')}</Nav.Link>
-            <Nav.Link href="#skills" className={activeLink === 'skills' ? 'active' : ''} onClick={() => onUpdateLink('skills')}>{t('skills')}</Nav.Link>
-            <Nav.Link href="#projects" className={activeLink === 'projects' ? 'active' : ''} onClick={() => onUpdateLink('projects')}>{t('project')}</Nav.Link>
+            <Nav.Link href="#home" className={activeLink === 'home' ? 'active' : ''} onClick={() => onUpdateLink('home')}>{t('nav_bar.home')}</Nav.Link>
+            <Nav.Link href="#skills" className={activeLink === 'skills' ? 'active' : ''} onClick={() => onUpdateLink('skills')}>{t('nav_bar.skills')}</Nav.Link>
+            <Nav.Link href="#projects" className={activeLink === 'projects' ? 'active' : ''} onClick={() => onUpdateLink('projects')}>{t('nav_bar.projects')}</Nav.Link>
             <NavDropdown title={i18n.language} id="basic-nav-dropdown">
               { i18n.language !== 'en' &&
                 <NavDropdown.Item onClick={() => switchLanguage('en')}>

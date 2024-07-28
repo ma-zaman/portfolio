@@ -1,10 +1,9 @@
-import './App.css'
+import './App.css';
 import './App.scss';
+import { NavBar } from './components/nav-bar';
 import { Banner } from './components/banner';
-import NavBar from './components/nav-bar'
 
 function App() {
-
   return (
     <>
       <div className="App">
@@ -12,7 +11,7 @@ function App() {
         <Banner />
       </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "format": "prettier --write \"**/*.{json,ts,tsx}\"",
+    "lint": "eslint . --ext ts,tsx --fix",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -16,11 +17,13 @@
     "i18next-browser-languagedetector": "^8.0.0",
     "i18next-http-backend": "^2.5.2",
     "install": "^0.13.0",
+    "prettier": "^3.3.3",
     "react": "^18.3.1",
     "react-bootstrap": "^2.10.4",
     "react-bootstrap-icons": "^1.11.4",
     "react-dom": "^18.3.1",
     "react-i18next": "^15.0.0",
+    "react-multi-carousel": "^2.8.5",
     "vite-plugin-svgr": "^4.2.0"
   },
   "devDependencies": {

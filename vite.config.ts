@@ -11,6 +11,9 @@ export default defineConfig({
       '@translations': fileURLToPath(
         new URL('./src/i18n/translation/index.ts', import.meta.url),
       ),
+      '@components': fileURLToPath(
+        new URL('./src/components/index.ts', import.meta.url),
+      ),
       '@': fileURLToPath(new URL('./src/', import.meta.url)),
     },
   },

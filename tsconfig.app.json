@@ -28,6 +28,7 @@
     "paths": {
       "@icons/*": ["src/assets/icons/*"],
       "@translations": ["src/i18n/translation/index"],
+      "@components": ["src/components/index"],
       "@/*": ["src/*"]
     }
   },

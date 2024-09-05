@@ -11,4 +11,9 @@ export const en = {
       'Full-stack engineer with experience in Vue.js, React and Node.js, working in Agile/Scrum environments. Competent in clean-code, microservices architecture, TDD, and integration of technologies such as Kafka and MongoDB.',
     connect: `Let's connect`,
   },
+  skills: {
+    title: 'Skills',
+    subtitle:
+      'Learn more about my Fullstack development skills: NodeJS, Vue3, React, MongoDB, TypeScript...',
+  },
 };

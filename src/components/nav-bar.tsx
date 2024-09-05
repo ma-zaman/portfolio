@@ -95,10 +95,18 @@ export const NavBar = () => {
               >
                 <Image src={github} alt="" width={'33px'} />
               </a>
-              <a href="#" className="px-1">
+              <a
+                href="https://www.instagram.com/alizaman.fr/"
+                target="_blank"
+                className="px-1"
+              >
                 <Image src={instagram} alt="" width={'30px'} />
               </a>
-              <a href="#" className="px-1">
+              <a
+                href="https://www.linkedin.com/in/mali-zaman/"
+                target="_blank"
+                className="px-1"
+              >
                 <Image src={linkedin} alt="" width={'30px'} />
               </a>
             </div>

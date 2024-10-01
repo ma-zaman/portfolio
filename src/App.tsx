@@ -3,7 +3,8 @@ import './App.scss';
 import { NavBar } from './components/nav-bar';
 import { Banner } from './components/banner';
 import { Skills } from './components/skills';
-import { Projects } from './components/Projects'
+import { Projects } from './components/Projects';
+import { Footer } from './components/Footer';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Banner />
         <Skills />
         <Projects />
+        <Footer />
       </div>
     </>
   );
